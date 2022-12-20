@@ -1,48 +1,144 @@
-/*11) Write a program to swap two numbers without using 3rd variable and with using 3rd variable using class and object ? */
-import java.util.Scanner;
-class Test
+/*
+   10) Write a program to implement queue and perform following using class and object ?
+            a) create an queue of size 10 using array
+            b) enqueue 10 elements into queue using enqueue method
+            c) replace even numbers available in queue with nearest prime numbers
+            d) display number of odd and prime numbers.
+            e) dequeue 3 elements from queue using dequeue method
+            f) display remaining element of queue.
+ */
+class Queue
 {
-    int a;
-    int b;
-    Test(int a,int b)
+    int[] arr = new int[10];
+    int front = -1;
+    int rear = -1;
+    public void enqueue(int num)
     {
-        this.a=a;
-        this.b=b;
+        if(isFull())
+        {
+            System.out.println("Queue is full");
+        }else
+        {
+            rear++;
+            arr[rear] = num;    
+        }
     }
-    void swap1()
+    public void display()
     {
-        System.out.println("\n\nSwapping without using 3rd variable ");
-        a=a+b;
-        b=a-b;
-        a=a-b;
-        System.out.println("The value of a:"+a+" \nThe value of b: "+b);
+        System.out.println("The elements are: ");
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.println(arr[i]);
+        }
     }
-    void swap2()
+    public void replaceEvenWithPrime()
     {
-        System.out.println("\n\nSwapping with using 3rd variable ");
-        int c=a;
-        a=b;
-        b=c;
-        System.out.println("The value of a: "+a+" \nThe value of b :"+b);
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i] % 2 == 0)
+            {
+                arr[i] = nearestPrime(arr[i]);
+            }
+        }
     }
-}
+        public int nearestPrime(int num)
+        {
+            int prime = 0;
+            for(int i=num;i>0;i--)
+            {
+                if(isPrime(i))
+                {
+                    prime = i;
+                    break;
+                }
+            }
+        return prime;
+        }
+        public boolean isPrime(int num)
+        {
+            boolean flag = true;
+            for(int i=2;i<num;i++)
+            {
+                if(num % i == 0)
+                {
+                    flag = false;
+                    break;
+                }
+            }
+            return flag;
+        }
+        public void displayOddAndPrime()
+        {
+            int odd = 0;
+            int prime = 0;
+            for(int i=0;i<arr.length;i++)
+            {
+                if(arr[i] % 2 != 0)
+                {
+                    odd++;
+                }
+                if(isPrime(arr[i]))
+                {
+                    prime++;
+                }
+            }
+            System.out.println("Number of odd numbers is " + odd);
+            System.out.println("Number of prime numbers is " + prime);
+        }
+        public void dequeue()
+        {
+            if(isEmpty())
+            {
+                System.out.println("Queue is empty");
+            }else
+            {
+                front++;
+            }
+        }
+            public boolean isFull()
+            {
+                if(rear == arr.length-1)
+                {
+                    return true;
+                }else
+                {
+                    return false;
+                }
+            }
+            public boolean isEmpty()
+            {
+                if(front == rear)
+                {
+                    return true;
+                }else
+                {
+                    return false;
+                }
+            }
+    }
 
-public class Assignment3_10 
-{
-    public static void main(String[] args)
+    public class Assignment3_10 
     {
-        int a,b;
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Enter two number : ");
-        a=sc.nextInt();
-        b=sc.nextInt();
-        System.out.println("Entered value of a: "+a);
-        System.out.println("Entered value of b: "+b);
-        Test t=new Test(a,b);
-        t.swap1();
-        Test t1=new Test(a,b);
-        t1.swap2();
-            
+        public static void main(String[] args) 
+        {
+            Queue obj = new Queue();
+            obj.enqueue(1);
+            obj.enqueue(2);
+            obj.enqueue(3);
+            obj.enqueue(4);
+            obj.enqueue(5);
+            obj.enqueue(6);
+            obj.enqueue(7);
+            obj.enqueue(8);
+            obj.enqueue(9);
+            obj.enqueue(10);
+            obj.display();
+            obj.replaceEvenWithPrime();
+            obj.display();
+            obj.displayOddAndPrime();
+            obj.dequeue();
+            obj.dequeue();
+            obj.dequeue();
+            obj.display();
+        }
     }
-    
-}

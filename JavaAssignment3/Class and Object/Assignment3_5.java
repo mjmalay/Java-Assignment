@@ -29,7 +29,7 @@ public class Assignment3_5
 {
     public static void main(String[] args) 
     {
-        Triangle t=new Triangle(3, 5.6, 2.6);
+        Triangle t=new Triangle(3, 5, 3);
         System.out.println("Area of a triangle :"+t.area());
         System.out.println("Perimeter of a triangle :"+t.perimeter());    
     }    

@@ -6,55 +6,94 @@
             d) search any user defined element in stack using peak method
             e) delete 3 elements from stack using pop and isempty method
             f) display remaining element of stack */
-import java.utl.Scanner;
 class Stack
 {
-    int arr[]=new int[10];
+    int size;
+    int arr[];
     int top;
-    int cap;
-    Stack(int arr[])
+    Stack(int n)
     {
-        this.arr=arr;
-        this.top=top;
-        this.cap=cap;
+        this.size=n;
+        this.arr=new int[size];
+        this.top=-1;
     }
-    int create()
+    public boolean isFull()
     {
-        arr=
-        cap=10;
-        top=-1;
-    }
-    public void push(int n)
-    {
-        if(isFull())
+        if(top==size-1)
         {
-            System.out.println("hfih");
-            exit(1);
+            return true;
+        }else {
+            return false;
         }
-        System.out.println(n);
-        arr[top++]=n;
     }
-    
-    
+    public boolean isEmpty()
+    {
+        if(top==-1)
+        {
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public void push(int a)
+    {
+        boolean st=isFull();
+        if(st)
+        {
+            System.out.println("OverFlow");
+        }else {
+            top=top+1;
+            arr[top]=a;
+            System.out.println(arr[top]+" Has beeb insert into the stack.. ");
+        }
+    }
+    public void pop()
+    {
+        boolean st=isEmpty();
+        if(st)
+        {
+            System.out.println("Underflow");
+        }else {
+            int t=arr[top];
+            top=top-1;
+            System.out.println("Popped item from stack is "+t);
+        }
+    }
+    public void display()
+    {
+        boolean st=isEmpty();
+        if(st)
+        {
+            System.out.println("Stacj is empty .Nothing to Display ");
+        }else{
+            for(int i=0;i<=top;i++)
+            {
+                System.out.println("Top position "+i+" and available data "+arr[i]);
+            }
+        }
+    }  
 }
 
 public class Assignment3_9 
 {
     public static void main(String[] args) 
     {
-        System.out.println("Enter the choice to perfom the task: ");
-        java.util.Scanner sc=new Scanner(System.in);
-        System.out.println("a) create an stack of size 10 using array");
-        System.out.println("b) insert 10 elements into stack using push and isfull method");
-        System.out.println("c) find factorial of difference between largest and smallest element of stack");
-        System.out.println("d) search any user defined element in stack using peak method");
-        System.out.println("e) delete 3 elements from stack using pop and isempty method");
-        System.out.println("f) display remaining element of stack");
-        char ch=sc.next().charAt(0);
-        switch(ch)
-        {
-            case 'a':
-                    
-        }
+       Stack s=new Stack(10);
+       s.push(1);
+       s.push(2);
+       s.push(3);
+       s.push(4);
+       s.push(5);
+       s.push(6);
+       s.push(7);
+       s.push(8);
+       s.push(9);
+       s.push(10);
+       s.display();
+       s.pop();
+       s.pop();
+       s.pop();
+       s.display();
     }
 }

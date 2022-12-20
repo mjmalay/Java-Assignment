@@ -9,47 +9,46 @@ import java.util.Scanner;
 class Bank
 {
     double balance;
-    double amount=1500;
-    double amt;
-    Bank(double balance)
+    Bank()
     {
-        this.balance=balance;
+        this.balance=3000;
     }
     double Initialize()
     {
         return balance;
     }
-    double deposit()
+    public void deposit(double amount)
     {
         
         if(balance>1000)
         {
 
-            return amount+balance;
+             balance=amount+balance;
+             System.out.println("Balance: "+balance);
         }
         else {
-           return  amount+balance-100;
+            balance=balance-100;
+            balance=balance+amount;
+            System.out.println("Balance: "+balance);
         }
 
     }
-    double Withdraw()
+    public void  Withdraw(double amount)
     {
       
         if (balance>1000)
         {
-            Scanner sc=new Scanner(System.in);
-            System.out.println("Enter amount to withdraw :");
-            amt=sc.nextDouble();
-            
+           balance=balance-amount;
+           System.out.println("Balance: "+balance);
         }
         else{
             System.out.println("low balance");
         }
-        return balance-amt;
+       
     }
-    double check()
+    public void check()
     {
-        return balance;
+        System.out.println("Balance: "+balance);
     }
 }
 
@@ -57,31 +56,9 @@ public class Assignment3_7
 {
     public static void main(String[] args) 
     {
-        Bank b=new Bank(3000);
-        
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Enter the option to perform the task :");
-        System.out.println("a)initial the balance ");
-        System.out.println("b) Deposit amount if balance is more than 1000 otherwise take Rs 100 as penalty for deposit ");
-        System.out.println("c) Withdraw amount if balance is more than 1000 otherwise alert user for low balance");
-        System.out.println("d) check for balance");
-        char ch=sc.next().charAt(0);
-        switch(ch)
-        {
-            case 'a':
-                    System.out.println("The balance is :"+b.Initialize());
-                    break;
-            case 'b':
-                    System.out.println("After deposit balance :"+b.deposit());
-                    break;
-            case 'c':
-                    System.out.println("After withdraw balance : "+b.Withdraw());
-                    break;
-            case 'd':
-                    System.out.println("total balance :"+b.check());
-                    break;                    
-
-        }
-
+        Bank b=new Bank();
+        b.deposit(1000);
+        b.Withdraw(1000);
+        b.check();       
     }
 }

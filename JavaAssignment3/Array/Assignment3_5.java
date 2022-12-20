@@ -1,10 +1,10 @@
 /*5) Write a program to find summation, subtraction and multiplication of two 3X4 matrices ? */
 
-
+import java.lang.*;
 import java.util.Scanner;
 public class Assignment3_5 
 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ArrayIndexOutOfBoundsException {
         int A[][]=new int[3][4];
         int B[][]=new int[3][4];
         Scanner sc=new Scanner(System.in);
