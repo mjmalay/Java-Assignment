@@ -30,7 +30,7 @@ class FindListImplement implements IfindList {
         }
     }
     public void displayFibonacci() {
-        System.out.println("displayFibonacci()");
+        System.out.println("\ndisplayFibonacci()");
         int a = 0, b = 1, c = 0;
         System.out.print(a + " " + b + " ");
         while (c <= end) {

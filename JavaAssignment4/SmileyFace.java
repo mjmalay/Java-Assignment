@@ -2,7 +2,6 @@
 
 import java.applet.*;
 import java.awt.*;
-import java.awt.event.*;
 /*<applet code=SmileyFace.class width=500 height=500></applet> */
 
 public class SmileyFace extends Applet implements Runnable 
@@ -17,12 +16,8 @@ public class SmileyFace extends Applet implements Runnable
     public void run()
     {
         try{
-            for(;;)
-            {
-                Thread.sleep(1000);
                 repaint();
-            }
-        }catch(InterruptedException e){}
+        }catch(Exception e){}
     }
     public void paint(Graphics g)
     {

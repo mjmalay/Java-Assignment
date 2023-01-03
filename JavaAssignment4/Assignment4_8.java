@@ -12,7 +12,7 @@ public class Assignment4_8  extends Thread
                     
                         System.out.print("  ");
                     }
-                    for (int j=0; j<=i; j++ )j
+                    for (int j=0; j<=i; j++ )
                     {
                         System.out.print(n+"  ");
                         Thread.sleep(1000);

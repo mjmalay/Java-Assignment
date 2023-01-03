@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /*  3)WAP to check weather a number is palindrome number and divisible by 3 and 5 or not using custom exception and interface?*/
 
 interface IPalindrome 
@@ -42,7 +44,11 @@ class Palindrome
 class Assignment4_3 
 {
     public static void main(String[] args) {
-        Palindrome obj = new Palindrome(121);
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter a number to check whether it is palindrome or not : ");
+        int num=sc.nextInt();
+
+        Palindrome obj = new Palindrome(num);
         try {
             obj.isPalindrome();
         } catch (Exception e) {

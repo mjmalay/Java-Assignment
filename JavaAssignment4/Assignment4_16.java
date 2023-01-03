@@ -2,12 +2,12 @@
 using swing and event handling? */
 import java.awt.*;
 import java.awt.event.*;
-
+import java.lang.*;
 import javax.swing.*;
 
 class Calculator extends JFrame implements ActionListener
 {
-    int res=0;
+    double res=0;
 
 
     JLabel l1=new JLabel("Enter 1st number :");
@@ -75,8 +75,8 @@ class Calculator extends JFrame implements ActionListener
     {
        try {
             
-            int num1=Integer.parseInt(tf1.getText());
-            int num2=Integer.parseInt(tf2.getText());
+            double num1=Double.parseDouble(tf1.getText());
+            double num2=Double.parseDouble(tf2.getText());
             
             if(e.getSource()==bt1)
             {
@@ -101,7 +101,7 @@ class Calculator extends JFrame implements ActionListener
             }
             else if(e.getSource()==bt6)
             {
-                res=num1+num2;
+                res=Math.pow(num1,num2);
                 tf3.setText(""+res);
             }else if(e.getSource()==bt)
             {

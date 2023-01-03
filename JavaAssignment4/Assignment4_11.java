@@ -16,18 +16,16 @@ public class Assignment4_11 extends Applet implements Runnable
     }    
     public void paint(Graphics g)
     {
-        
         g.fillOval(x,y,80,80);
-
     }
     public void run()
     {
         try {
-            for(;;)
+            while(true)
             {
-                for(;;)
+              while(true)
                 {
-                    if(y==0)
+                    if(y==120)
                     {
                         break;
                     }else if(x==390){
@@ -35,6 +33,24 @@ public class Assignment4_11 extends Applet implements Runnable
                         y=0;
                         repaint();
                     }else{
+                        y=0;
+                        x=x+3;
+                        Thread.sleep(100);
+                        repaint();
+                    }
+                }
+               while(true)
+                {
+                    if(y==0)
+                    {
+                        break;
+                    }else if(x==390)
+                    {
+                        x=0;
+                        y=0;
+                        repaint();
+                    }
+                    else{
                         y=y-3;
                         x=x+3;
                         Thread.sleep(100);

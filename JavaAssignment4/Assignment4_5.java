@@ -3,8 +3,8 @@ sum,substraction,division,multiplication,modulus,power,sqrt,cubic root, sinx, co
 x, exp x, absolute value of x using interface and package?  */
 
 import java.util.Scanner;
-
-interface IBasicCalaulator {
+interface IBasicCalaulator 
+{
     public double sum(double...arr);
     public double substract(double...arr);
     public double multiply(double...arr);
@@ -12,38 +12,48 @@ interface IBasicCalaulator {
 
 }
 
-class ScientificCalculator extends BasicCalculator {
-    public double modulus(double x, double y){
+class ScientificCalculator extends BasicCalculator 
+{
+    public double modulus(double x, double y)
+    {
         return x%y;
     }
-    public double power(double x, double y){
+    public double power(double x, double y)
+    {
         return Math.pow(x, y);
     }
-    public double sqrt(double x){
+    public double sqrt(double x)
+    {
         return Math.sqrt(x);
     }
-    public double cubic(double x){
+    public double cubic(double x)
+    {
         return Math.cbrt(x);
     }
-    public double sinx(double x){
+    public double sinx(double x)
+    {
         return Math.sin(x);
     }
-    public double cosx(double x){
+    public double cosx(double x)
+    {
         return Math.cos(x);
     }
-    public double tanx(double x){
+    public double tanx(double x)
+    {
         return Math.tan(x);
     }
-    public double logx(double x){
+    public double logx(double x)
+    {
         return Math.log(x);
     }
-    public double exp(double x){
+    public double exp(double x)
+    {
         return Math.exp(x);
     }
-    public double absoluteValue(double x){
+    public double absoluteValue(double x)
+    {
         return Math.abs(x);
     }
-    
 }
 
 
@@ -140,5 +150,5 @@ class Assignment4_5 {
         }
     
     }
-    
+  
 }
